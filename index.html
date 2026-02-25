@@ -3,292 +3,333 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gillman Khan | Portfolio</title>
+<title>Gillman Khan | Software Engineer</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
 body{
-    font-family:'Inter',sans-serif;
-    background:linear-gradient(135deg,#0f172a,#020617);
-    color:#e2e8f0;
+font-family:'Inter',sans-serif;
+background:linear-gradient(135deg,#0f172a,#020617);
+color:#e2e8f0;
 }
 
 /* NAVBAR */
 .navbar{
-    position:fixed;
-    top:0;
-    width:100%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 60px;
-    background:rgba(15,23,42,0.6);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid rgba(59,130,246,0.2);
-    z-index:1000;
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 60px;
+background:rgba(15,23,42,0.6);
+backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(59,130,246,0.2);
+z-index:1000;
 }
 
 .logo{
-    font-weight:700;
-    font-size:1.2rem;
-    color:#3b82f6;
+font-weight:700;
+font-size:1.2rem;
+color:#3b82f6;
 }
 
 .navbar ul{
-    list-style:none;
-    display:flex;
-    gap:25px;
+list-style:none;
+display:flex;
+gap:25px;
 }
 
 .navbar a{
-    text-decoration:none;
-    color:#e2e8f0;
-    transition:0.3s;
+text-decoration:none;
+color:#e2e8f0;
+transition:0.3s;
 }
 
 .navbar a:hover{
-    color:#3b82f6;
+color:#3b82f6;
 }
 
 /* HERO */
 header{
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:20px;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.profile{
+width:160px;
+height:160px;
+border-radius:50%;
+object-fit:cover;
+margin-bottom:20px;
+border:4px solid #3b82f6;
+box-shadow:0 0 40px rgba(59,130,246,0.7);
 }
 
 header h1{
-    font-size:3.5rem;
-    font-weight:700;
-    background:linear-gradient(90deg,#3b82f6,#60a5fa);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+font-size:3.5rem;
+font-weight:700;
+background:linear-gradient(90deg,#3b82f6,#60a5fa);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 header p{
-    margin-top:15px;
-    font-size:1.2rem;
-    color:#94a3b8;
-    min-height:30px;
+margin-top:15px;
+font-size:1.2rem;
+color:#94a3b8;
+min-height:30px;
 }
 
 .btn{
-    margin:15px 10px;
-    padding:12px 25px;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:600;
-    transition:0.3s;
+margin:15px 10px;
+padding:12px 25px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
 }
 
 .primary{
-    background:#3b82f6;
-    color:white;
+background:#3b82f6;
+color:white;
 }
 
 .primary:hover{
-    background:#2563eb;
+background:#2563eb;
 }
 
 .secondary{
-    border:1px solid #3b82f6;
-    color:#3b82f6;
+border:1px solid #3b82f6;
+color:#3b82f6;
 }
 
 .secondary:hover{
-    background:#3b82f6;
-    color:white;
+background:#3b82f6;
+color:white;
 }
 
 /* SECTIONS */
 section{
-    padding:100px 20px;
-    max-width:1100px;
-    margin:auto;
+padding:100px 20px;
+max-width:1100px;
+margin:auto;
 }
 
 h2{
-    font-size:2rem;
-    margin-bottom:30px;
-    color:#3b82f6;
+font-size:2rem;
+margin-bottom:30px;
+color:#3b82f6;
 }
 
 .card{
-    background:rgba(30,41,59,0.6);
-    backdrop-filter:blur(10px);
-    padding:25px;
-    border-radius:12px;
-    margin-bottom:25px;
-    transition:0.3s;
-    border:1px solid rgba(59,130,246,0.2);
+background:rgba(30,41,59,0.6);
+backdrop-filter:blur(10px);
+padding:25px;
+border-radius:12px;
+margin-bottom:25px;
+transition:0.3s;
+border:1px solid rgba(59,130,246,0.2);
 }
 
 .card:hover{
-    transform:translateY(-8px);
-    border:1px solid #3b82f6;
+transform:translateY(-8px);
+border:1px solid #3b82f6;
 }
 
-.skills-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+/* SKILL BARS */
+.skill-bar{
+width:100%;
+height:8px;
+background:#1e293b;
+border-radius:5px;
+margin-bottom:20px;
 }
 
+.skill{
+height:100%;
+border-radius:5px;
+background:#3b82f6;
+width:0;
+transition:width 1.5s ease;
+}
+
+.skill.java{ width:85%; }
+.skill.dsa{ width:80%; }
+.skill.backend{ width:75%; }
+.skill.security{ width:70%; }
+
+/* PROJECT BUTTON */
 .project-btn{
-    display:inline-block;
-    margin-top:15px;
-    padding:8px 18px;
-    border-radius:6px;
-    background:#3b82f6;
-    color:white;
-    text-decoration:none;
-    font-size:0.9rem;
-    transition:0.3s;
+display:inline-block;
+margin-top:15px;
+padding:8px 18px;
+border-radius:6px;
+background:#3b82f6;
+color:white;
+text-decoration:none;
+font-size:0.9rem;
+transition:0.3s;
 }
 
 .project-btn:hover{
-    background:#2563eb;
+background:#2563eb;
+}
+
+/* SCROLL REVEAL */
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:all 0.8s ease;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
 }
 
 footer{
-    text-align:center;
-    padding:30px;
-    background:#020617;
-    color:#64748b;
+text-align:center;
+padding:30px;
+background:#020617;
+color:#64748b;
 }
 
 @media(max-width:768px){
-    .navbar{
-        padding:15px 20px;
-    }
-    header h1{
-        font-size:2.5rem;
-    }
+.navbar{
+padding:15px 20px;
+}
+header h1{
+font-size:2.5rem;
+}
 }
 </style>
 </head>
+
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar">
-    <div class="logo">GK</div>
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+<div class="logo">GK</div>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
 </nav>
 
-<!-- HERO -->
 <header>
-    <h1>Gillman Khan</h1>
-    <p id="typing"></p>
-    <div>
-        <a href="#" class="btn primary">Download Resume</a>
-        <a href="#contact" class="btn secondary">Contact Me</a>
-    </div>
+<img src="profile.jpg" class="profile">
+<h1>Gillman Khan</h1>
+<p id="typing"></p>
+<div>
+<a href="resume.pdf" download class="btn primary">Download Resume</a>
+<a href="#contact" class="btn secondary">Contact Me</a>
+</div>
 </header>
 
-<!-- ABOUT -->
 <section id="about">
-    <h2>About Me</h2>
-    <div class="card">
-        <p>
-            I am a Computer Science student focused on Java, Data Structures & Algorithms,
-            and Cybersecurity. I actively solve coding problems, participate in CTF challenges,
-            and build secure applications. My goal is to secure international internship opportunities
-            and grow as a software engineer.
-        </p>
-    </div>
+<h2>About Me</h2>
+<div class="card reveal">
+<p>
+I am a Computer Science undergraduate (2027) specializing in Java and Data Structures & Algorithms, with growing expertise in backend systems and secure application development.
+I have completed hands-on software engineering simulations, integrated APIs, and worked with database systems.
+My focus is building scalable, efficient, and secure software solutions while preparing for high-impact internship opportunities.
+</p>
+</div>
 </section>
 
-<!-- SKILLS -->
 <section>
-    <h2>Skills</h2>
-    <div class="skills-grid">
-        <div class="card">
-            <h3>Programming</h3>
-            <p>Java, Python, HTML, CSS</p>
-        </div>
-        <div class="card">
-            <h3>Core CS</h3>
-            <p>DSA, OOP, Operating Systems, DBMS</p>
-        </div>
-        <div class="card">
-            <h3>Tools</h3>
-            <p>Git, GitHub, VS Code, MySQL</p>
-        </div>
-        <div class="card">
-            <h3>Cybersecurity</h3>
-            <p>Web Security, CTF Challenges, Network Basics</p>
-        </div>
-    </div>
+<h2>Skills</h2>
+<div class="card reveal">
+
+<h3>Java</h3>
+<div class="skill-bar"><div class="skill java"></div></div>
+
+<h3>Data Structures & Algorithms</h3>
+<div class="skill-bar"><div class="skill dsa"></div></div>
+
+<h3>Backend & APIs</h3>
+<div class="skill-bar"><div class="skill backend"></div></div>
+
+<h3>Cybersecurity Basics</h3>
+<div class="skill-bar"><div class="skill security"></div></div>
+
+</div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
-    <h2>Projects</h2>
+<h2>Projects</h2>
 
-    <div class="card">
-        <h3>Digital Fraud Detection Concept</h3>
-        <p>Security-focused system idea to detect digital fraud patterns using Java and DSA logic.</p>
-        <a href="#" class="project-btn">View Code</a>
-    </div>
+<div class="card reveal">
+<h3>Digital Fraud Detection System</h3>
+<p>Designed fraud-detection logic using Java and DSA principles.</p>
+<a href="https://github.com/Gillmankhan07" target="_blank" class="project-btn">View Code</a>
+</div>
 
-    <div class="card">
-        <h3>Restaurant Website</h3>
-        <p>Responsive website built using HTML, CSS and modern layout techniques.</p>
-        <a href="#" class="project-btn">View Project</a>
-    </div>
+<div class="card reveal">
+<h3>Restaurant Website</h3>
+<p>Responsive web application built using HTML & CSS.</p>
+<a href="https://github.com/Gillmankhan07" target="_blank" class="project-btn">View Project</a>
+</div>
 
-    <div class="card">
-        <h3>CTF Practice & Writeups</h3>
-        <p>Capture The Flag challenges focused on web vulnerabilities and cybersecurity analysis.</p>
-        <a href="#" class="project-btn">View Details</a>
-    </div>
+<div class="card reveal">
+<h3>CTF Practice & Security Writeups</h3>
+<p>Web-based security challenges and vulnerability analysis.</p>
+<a href="https://github.com/Gillmankhan07" target="_blank" class="project-btn">View Details</a>
+</div>
 
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
-    <h2>Contact</h2>
-    <div class="card">
-        <p>Email: your.email@example.com</p>
-        <p>GitHub: https://github.com/Gillmankhan07</p>
-    </div>
+<h2>Contact</h2>
+<div class="card reveal">
+<p>Email: gillmankhanimmortal@gmail.com</p>
+<p>GitHub: github.com/Gillmankhan07</p>
+<p>LinkedIn: linkedin.com/in/gillman-khan-24783829b</p>
+</div>
 </section>
 
 <footer>
-    © 2026 Gillman Khan | Built with GitHub Pages
+© 2026 Gillman Khan | Built with GitHub Pages
 </footer>
 
-<!-- TYPING EFFECT -->
 <script>
-const text = "Computer Science Student | Aspiring Software Engineer";
+const text = "Software Engineering Intern | Java | DSA | Backend Development";
 let i = 0;
 const speed = 50;
 
 function typeWriter() {
-    if (i < text.length) {
-        document.getElementById("typing").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, speed);
-    }
+if (i < text.length) {
+document.getElementById("typing").innerHTML += text.charAt(i);
+i++;
+setTimeout(typeWriter, speed);
 }
-
+}
 typeWriter();
+
+window.addEventListener("scroll", function(){
+const reveals = document.querySelectorAll(".reveal");
+reveals.forEach((el)=>{
+const windowHeight = window.innerHeight;
+const elementTop = el.getBoundingClientRect().top;
+if(elementTop < windowHeight - 100){
+el.classList.add("active");
+}
+});
+});
 </script>
 
 </body>
