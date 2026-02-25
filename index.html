@@ -3,26 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gillman Khan | Matrix Mode</title>
+<title>Gillman Khan | Cyber Terminal</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 
 <style>
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-scroll-behavior:smooth;
 }
 
 body{
 background:black;
 color:#00ff88;
 font-family:'Share Tech Mono', monospace;
-overflow-x:hidden;
+overflow:hidden;
 }
 
-/* MATRIX CANVAS */
+/* MATRIX BACKGROUND */
 #matrix{
 position:fixed;
 top:0;
@@ -32,26 +31,38 @@ height:100%;
 z-index:-2;
 }
 
-/* SCANLINE EFFECT */
-body::after{
-content:"";
+/* BOOT SCREEN */
+#boot{
 position:fixed;
-top:0;
-left:0;
 width:100%;
 height:100%;
-background:repeating-linear-gradient(
-to bottom,
-rgba(0,255,136,0.05),
-rgba(0,255,136,0.05) 1px,
-transparent 1px,
-transparent 3px
-);
-pointer-events:none;
-z-index:-1;
+background:black;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+font-size:1rem;
+z-index:9999;
 }
 
-/* NAVBAR */
+.boot-line{
+opacity:0;
+animation:fadeIn 0.6s forwards;
+}
+
+@keyframes fadeIn{
+to{opacity:1;}
+}
+
+/* MAIN CONTENT */
+#main{
+opacity:0;
+transition:1s;
+overflow:auto;
+height:100vh;
+}
+
+/* NAV */
 .navbar{
 position:fixed;
 top:0;
@@ -64,19 +75,14 @@ border-bottom:1px solid #00ff88;
 z-index:1000;
 }
 
-.navbar ul{
-list-style:none;
-display:flex;
-gap:20px;
-}
-
 .navbar a{
 color:#00ff88;
 text-decoration:none;
+margin-left:20px;
 }
 
 .navbar a:hover{
-text-shadow:0 0 8px #00ff88;
+text-shadow:0 0 10px #00ff88;
 }
 
 /* HERO */
@@ -87,42 +93,45 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding-top:80px;
 }
 
 .profile{
 width:130px;
 height:130px;
 border-radius:50%;
-object-fit:cover;
 border:2px solid #00ff88;
-box-shadow:0 0 15px #00ff88;
+box-shadow:0 0 20px #00ff88;
 margin-bottom:20px;
 }
 
-header h1{
+.glitch{
 font-family:'Orbitron', sans-serif;
 font-size:2.5rem;
-text-shadow:0 0 10px #00ff88;
+position:relative;
+animation:flicker 2s infinite;
+}
+
+@keyframes flicker{
+0%{opacity:1;}
+50%{opacity:0.8;}
+100%{opacity:1;}
 }
 
 .btn{
-margin:15px 8px;
+margin:15px;
 padding:8px 20px;
 border:1px solid #00ff88;
 background:transparent;
 color:#00ff88;
 text-decoration:none;
-transition:0.3s;
 }
 
 .btn:hover{
 background:#00ff88;
 color:black;
-box-shadow:0 0 15px #00ff88;
 }
 
-/* SECTIONS */
+/* SECTION */
 section{
 padding:80px 20px;
 max-width:1000px;
@@ -131,13 +140,9 @@ margin:auto;
 
 .card{
 background:rgba(0,0,0,0.7);
-padding:20px;
 border:1px solid #00ff88;
+padding:20px;
 margin-bottom:20px;
-}
-
-.card:hover{
-box-shadow:0 0 15px #00ff88;
 }
 
 footer{
@@ -146,67 +151,37 @@ padding:20px;
 border-top:1px solid #00ff88;
 font-size:0.8rem;
 }
-
-/* BOOT SCREEN */
-#boot{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:black;
-color:#00ff88;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-z-index:2000;
-font-size:1rem;
-}
-
-.hidden{
-display:none;
-}
 </style>
 </head>
 
 <body>
 
-<div id="boot">
-<p>Initializing Secure System...</p>
-<p>Bypassing Firewall...</p>
-<p>Decrypting Identity...</p>
-<p>Access Granted ✔</p>
-</div>
-
 <canvas id="matrix"></canvas>
 
+<div id="boot"></div>
+
+<div id="main">
 <nav class="navbar">
 <div>GILLMAN_SEC</div>
-<ul>
-<li><a href="#">HOME</a></li>
-<li><a href="#about">ABOUT</a></li>
-<li><a href="#projects">PROJECTS</a></li>
-<li><a href="#contact">CONTACT</a></li>
-</ul>
+<div>
+<a href="#">HOME</a>
+<a href="#about">ABOUT</a>
+<a href="#projects">PROJECTS</a>
+<a href="#contact">CONTACT</a>
+</div>
 </nav>
 
 <header>
 <img src="profile.jpg" class="profile">
-<h1>GILLMAN KHAN</h1>
+<h1 class="glitch">GILLMAN KHAN</h1>
 <p id="typing"></p>
-<div>
 <a href="resume.pdf" download class="btn">DOWNLOAD CV</a>
-<a href="#contact" class="btn">INITIATE CONTACT</a>
-</div>
 </header>
 
 <section id="about">
 <h2>> ABOUT</h2>
 <div class="card">
-<p>
-Cybersecurity-focused Computer Science student specializing in backend systems, vulnerability analysis, and secure development.
-</p>
+<p>Cybersecurity-focused developer specializing in secure backend systems and vulnerability analysis.</p>
 </div>
 </section>
 
@@ -214,11 +189,11 @@ Cybersecurity-focused Computer Science student specializing in backend systems, 
 <h2>> PROJECTS</h2>
 <div class="card">
 <h3>Digital Fraud Detection</h3>
-<p>Algorithmic fraud detection logic using Java & DSA.</p>
+<p>Java-based fraud detection logic using algorithmic optimization.</p>
 </div>
 <div class="card">
 <h3>CTF Security Labs</h3>
-<p>Web exploitation & vulnerability research practice.</p>
+<p>Web exploitation & vulnerability testing practice.</p>
 </div>
 </section>
 
@@ -226,50 +201,72 @@ Cybersecurity-focused Computer Science student specializing in backend systems, 
 <h2>> CONTACT</h2>
 <div class="card">
 <p>Email: gillmankhanimmortal@gmail.com</p>
-<p>GitHub: github.com/Gillmankhan07</p>
 </div>
 </section>
 
 <footer>
-SYSTEM STATUS: ONLINE | 2026 © GILLMAN_SEC
+SYSTEM STATUS: ONLINE | 2026
 </footer>
+</div>
 
 <script>
-/* MATRIX RAIN */
+/* MATRIX */
 const canvas=document.getElementById("matrix");
 const ctx=canvas.getContext("2d");
-
 canvas.height=window.innerHeight;
 canvas.width=window.innerWidth;
-
 const letters="01";
 const fontSize=14;
 const columns=canvas.width/fontSize;
 const drops=[];
-
 for(let x=0;x<columns;x++) drops[x]=1;
 
 function draw(){
 ctx.fillStyle="rgba(0,0,0,0.05)";
 ctx.fillRect(0,0,canvas.width,canvas.height);
-
 ctx.fillStyle="#00ff88";
 ctx.font=fontSize+"px monospace";
-
 for(let i=0;i<drops.length;i++){
 const text=letters[Math.floor(Math.random()*letters.length)];
 ctx.fillText(text,i*fontSize,drops[i]*fontSize);
-
-if(drops[i]*fontSize>canvas.height && Math.random()>0.975)
-drops[i]=0;
-
+if(drops[i]*fontSize>canvas.height && Math.random()>0.975) drops[i]=0;
 drops[i]++;
 }
 }
-
 setInterval(draw,33);
 
-/* TYPING EFFECT */
+/* BOOT ANIMATION */
+const bootLines=[
+"Initializing Secure System...",
+"Connecting to Encrypted Node...",
+"Bypassing Firewall...",
+"Decrypting Identity...",
+"Access Granted ✔"
+];
+
+const boot=document.getElementById("boot");
+
+let index=0;
+function showBootLine(){
+if(index<bootLines.length){
+let p=document.createElement("p");
+p.textContent=bootLines[index];
+p.classList.add("boot-line");
+p.style.animationDelay=(index*0.5)+"s";
+boot.appendChild(p);
+index++;
+setTimeout(showBootLine,600);
+}else{
+setTimeout(()=>{
+boot.style.display="none";
+document.getElementById("main").style.opacity="1";
+document.body.style.overflow="auto";
+},1500);
+}
+}
+showBootLine();
+
+/* TYPING */
 const text="> Ethical Hacker | Backend Developer | Security Researcher";
 let i=0;
 function typeWriter(){
@@ -279,12 +276,7 @@ i++;
 setTimeout(typeWriter,40);
 }
 }
-typeWriter();
-
-/* BOOT SCREEN DELAY */
-setTimeout(()=>{
-document.getElementById("boot").classList.add("hidden");
-},3000);
+setTimeout(typeWriter,4000);
 </script>
 
 </body>
