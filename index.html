@@ -23,7 +23,7 @@ color:#e2e8f0;
 
 /* LIGHT MODE */
 body.light{
-background:#f1f5f9;
+background:#f8fafc;
 color:#0f172a;
 }
 
@@ -33,7 +33,7 @@ border:1px solid #e2e8f0;
 }
 
 body.light .navbar{
-background:rgba(255,255,255,0.8);
+background:rgba(255,255,255,0.9);
 }
 
 body.light .skill-bar{
@@ -48,9 +48,9 @@ width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 60px;
-background:rgba(15,23,42,0.7);
-backdrop-filter:blur(10px);
+padding:18px 70px;
+background:rgba(15,23,42,0.75);
+backdrop-filter:blur(12px);
 z-index:1000;
 }
 
@@ -58,23 +58,25 @@ z-index:1000;
 font-weight:700;
 font-size:1.2rem;
 color:#3b82f6;
+letter-spacing:1px;
 }
 
 .navbar ul{
 list-style:none;
 display:flex;
-gap:25px;
+gap:30px;
 align-items:center;
 }
 
 .navbar a{
 text-decoration:none;
 color:inherit;
+font-weight:500;
 }
 
 .toggle{
 cursor:pointer;
-padding:6px 12px;
+padding:6px 14px;
 border-radius:20px;
 border:1px solid #3b82f6;
 color:#3b82f6;
@@ -92,36 +94,39 @@ padding:20px;
 }
 
 .profile{
-width:160px;
-height:160px;
+width:170px;
+height:170px;
 border-radius:50%;
 object-fit:cover;
-margin-bottom:20px;
+margin-bottom:25px;
 border:4px solid #3b82f6;
-box-shadow:0 0 40px rgba(59,130,246,0.7);
+box-shadow:0 0 50px rgba(59,130,246,0.7);
 }
 
 header h1{
-font-size:3.5rem;
+font-size:4rem;
+font-weight:700;
 background:linear-gradient(90deg,#3b82f6,#60a5fa);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
 header p{
-margin-top:15px;
-font-size:1.2rem;
-min-height:30px;
+margin-top:18px;
+font-size:1.3rem;
+min-height:35px;
+opacity:0.9;
 }
 
 .btn{
-margin:15px 10px;
-padding:12px 25px;
+margin:18px 10px;
+padding:14px 30px;
 border-radius:8px;
 text-decoration:none;
 font-weight:600;
 background:#3b82f6;
 color:white;
+transition:0.3s;
 }
 
 .btn.secondary{
@@ -130,39 +135,45 @@ border:1px solid #3b82f6;
 color:#3b82f6;
 }
 
+.btn:hover{
+box-shadow:0 0 20px rgba(59,130,246,0.6);
+transform:translateY(-3px);
+}
+
 /* SECTIONS */
 section{
-padding:100px 20px;
+padding:110px 20px;
 max-width:1100px;
 margin:auto;
 }
 
 h2{
-font-size:2rem;
-margin-bottom:30px;
+font-size:2.2rem;
+margin-bottom:35px;
 color:#3b82f6;
 }
 
 .card{
 background:rgba(30,41,59,0.6);
 backdrop-filter:blur(10px);
-padding:25px;
-border-radius:12px;
-margin-bottom:25px;
+padding:30px;
+border-radius:14px;
+margin-bottom:30px;
 border:1px solid rgba(59,130,246,0.2);
+transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-8px);
+transform:translateY(-10px);
 }
 
-/* SKILL BARS */
+/* SKILLS */
 .skill-bar{
 width:100%;
-height:8px;
+height:10px;
 background:#1e293b;
 border-radius:5px;
-margin-bottom:20px;
+margin-bottom:25px;
 }
 
 .skill{
@@ -181,8 +192,8 @@ transition:width 1.5s ease;
 /* REVEAL */
 .reveal{
 opacity:0;
-transform:translateY(40px);
-transition:all 0.8s ease;
+transform:translateY(50px);
+transition:all 0.9s ease;
 }
 
 .reveal.active{
@@ -192,14 +203,15 @@ transform:translateY(0);
 
 footer{
 text-align:center;
-padding:30px;
+padding:35px;
 background:#020617;
 color:#64748b;
+font-size:0.9rem;
 }
 
 @media(max-width:768px){
-.navbar{ padding:15px 20px; }
-header h1{ font-size:2.5rem; }
+.navbar{ padding:15px 25px; }
+header h1{ font-size:2.8rem; }
 }
 </style>
 </head>
@@ -207,7 +219,7 @@ header h1{ font-size:2.5rem; }
 <body>
 
 <nav class="navbar">
-<div class="logo">GK</div>
+<div class="logo">Gillman</div>
 <ul>
 <li><a href="#">Home</a></li>
 <li><a href="#about">About</a></li>
@@ -231,9 +243,9 @@ header h1{ font-size:2.5rem; }
 <h2>About Me</h2>
 <div class="card reveal">
 <p>
-Computer Science undergraduate (2027) specializing in Java and Data Structures & Algorithms.
-Experienced in backend integrations, REST APIs, database systems, and secure application development.
-Focused on building scalable, efficient, and production-ready software systems.
+Building scalable backend systems with Java & Data Structures.  
+Computer Science undergraduate (2027) focused on clean architecture, API integration, database systems, and secure application development.  
+Driven to create efficient, production-ready software solutions.
 </p>
 </div>
 </section>
@@ -243,10 +255,13 @@ Focused on building scalable, efficient, and production-ready software systems.
 <div class="card reveal">
 <h3>Java</h3>
 <div class="skill-bar"><div class="skill java"></div></div>
+
 <h3>Data Structures & Algorithms</h3>
 <div class="skill-bar"><div class="skill dsa"></div></div>
+
 <h3>Backend & APIs</h3>
 <div class="skill-bar"><div class="skill backend"></div></div>
+
 <h3>Cybersecurity Basics</h3>
 <div class="skill-bar"><div class="skill security"></div></div>
 </div>
@@ -257,19 +272,19 @@ Focused on building scalable, efficient, and production-ready software systems.
 
 <div class="card reveal">
 <h3>Digital Fraud Detection System</h3>
-<p>Fraud detection logic using Java and DSA principles.</p>
+<p>Fraud detection system concept using Java and DSA logic.</p>
 <a href="https://github.com/Gillmankhan07" target="_blank" class="btn">View Code</a>
 </div>
 
 <div class="card reveal">
 <h3>Restaurant Website</h3>
-<p>Responsive web application using HTML & CSS.</p>
+<p>Responsive web application built using modern HTML & CSS layout.</p>
 <a href="https://github.com/Gillmankhan07" target="_blank" class="btn">View Project</a>
 </div>
 
 <div class="card reveal">
 <h3>CTF Security Practice</h3>
-<p>Web vulnerability challenges and security analysis.</p>
+<p>Web vulnerability challenges and backend security analysis.</p>
 <a href="https://github.com/Gillmankhan07" target="_blank" class="btn">View Details</a>
 </div>
 
@@ -285,12 +300,11 @@ Focused on building scalable, efficient, and production-ready software systems.
 </section>
 
 <footer>
-© 2026 Gillman Khan | Built with GitHub Pages
+© 2026 Gillman Khan | Software Engineering Portfolio
 </footer>
 
 <script>
-/* Typing */
-const text="Software Engineering Intern | Java | DSA | Backend Development";
+const text="Software Engineer | Java | DSA | Backend Development";
 let i=0;
 function typeWriter(){
 if(i<text.length){
@@ -301,13 +315,12 @@ setTimeout(typeWriter,50);
 }
 typeWriter();
 
-/* Scroll Reveal + Skill Animation */
 window.addEventListener("scroll",function(){
 const reveals=document.querySelectorAll(".reveal");
 reveals.forEach((el)=>{
 const windowHeight=window.innerHeight;
 const elementTop=el.getBoundingClientRect().top;
-if(elementTop<windowHeight-100){
+if(elementTop<windowHeight-120){
 el.classList.add("active");
 const skills=el.querySelectorAll(".skill");
 skills.forEach(skill=>skill.classList.add("active"));
@@ -315,7 +328,6 @@ skills.forEach(skill=>skill.classList.add("active"));
 });
 });
 
-/* Dark Light Toggle */
 function toggleMode(){
 document.body.classList.toggle("light");
 }
