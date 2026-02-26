@@ -32,7 +32,7 @@ left:-200px;
 width:600px;
 height:600px;
 background:radial-gradient(circle,#3b82f6 0%,transparent 70%);
-opacity:0.15;
+opacity:0.12;
 z-index:-1;
 }
 
@@ -56,10 +56,10 @@ text-decoration:none;
 color:#cbd5e1;
 margin-left:25px;
 font-weight:500;
-position:relative;
+transition:0.3s;
 }
 
-.navbar a.active{
+.navbar a:hover{
 color:#3b82f6;
 }
 
@@ -237,6 +237,7 @@ text-align:center;
 <div>
 <a href="#metrics">Highlights</a>
 <a href="#projects">Projects</a>
+<a href="#system-design">System Design</a>
 <a href="#about">Philosophy</a>
 <a href="#contact">Contact</a>
 </div>
@@ -292,9 +293,10 @@ Backend Projects
 <div class="project">
 <h3>Digital Fraud Detection System</h3>
 <p>
-Implemented optimized fraud detection logic improving lookup complexity from O(n²) to O(n).
+Implemented rule-based fraud detection using optimized HashMap and Set structures,
+reducing lookup complexity from O(n²) to O(n).
 </p>
-<div class="metric">Focus: Scalable backend & algorithm efficiency</div>
+<div class="metric">Focus: Algorithm optimization & scalable backend logic</div>
 </div>
 
 <div class="project">
@@ -303,6 +305,28 @@ Implemented optimized fraud detection logic improving lookup complexity from O(n
 Built maintainable UI architecture emphasizing modular structure and responsiveness.
 </p>
 <div class="metric">Focus: Clean design & maintainable structure</div>
+</div>
+
+</section>
+
+<section id="system-design">
+<h2>System Design & Architecture Thinking</h2>
+
+<div class="project">
+<h3>Scalable Fraud Detection Architecture</h3>
+<p>
+Structured backend into validation, rule-engine, and logging layers.
+Optimized rule matching using HashMap indexing and modular pipeline design.
+</p>
+<div class="metric">Design Focus: Layered architecture & O(n) optimization</div>
+</div>
+
+<div class="project">
+<h3>Backend Flow Structure</h3>
+<p>
+Client → API Layer → Validation Layer → Business Logic → Database → Response
+</p>
+<div class="metric">Design Focus: Separation of concerns & scalability planning</div>
 </div>
 
 </section>
@@ -327,7 +351,6 @@ and design systems with modular architecture to ensure maintainability and scala
 </footer>
 
 <script>
-/* Scroll Reveal */
 const sections = document.querySelectorAll("section");
 
 window.addEventListener("scroll", () => {
