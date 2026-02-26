@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gillman Khan | Software Engineer</title>
+<title>Gillman Khan | Software Developer</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
@@ -17,7 +17,7 @@ scroll-behavior:smooth;
 
 body{
 font-family:'Inter',sans-serif;
-background:#ffffff;
+background:#f9fafb;
 color:#111827;
 line-height:1.6;
 }
@@ -49,7 +49,7 @@ color:#111827;
 
 /* HERO */
 header{
-min-height:90vh;
+min-height:85vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -60,7 +60,7 @@ margin:auto;
 }
 
 header h1{
-font-size:3.2rem;
+font-size:3rem;
 font-weight:700;
 margin-bottom:20px;
 }
@@ -70,7 +70,7 @@ color:#2563eb;
 }
 
 header p{
-font-size:1.2rem;
+font-size:1.1rem;
 max-width:650px;
 color:#4b5563;
 margin-bottom:30px;
@@ -78,11 +78,12 @@ margin-bottom:30px;
 
 .btn{
 display:inline-block;
-padding:12px 24px;
+padding:12px 22px;
 border-radius:6px;
 text-decoration:none;
 font-weight:500;
 margin-right:15px;
+transition:0.2s;
 }
 
 .primary{
@@ -90,9 +91,18 @@ background:#2563eb;
 color:white;
 }
 
+.primary:hover{
+background:#1e40af;
+}
+
 .secondary{
 border:1px solid #2563eb;
 color:#2563eb;
+}
+
+.secondary:hover{
+background:#2563eb;
+color:white;
 }
 
 /* SECTION */
@@ -107,6 +117,22 @@ font-size:1.8rem;
 margin-bottom:30px;
 }
 
+/* SKILLS GRID */
+.skills{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.skill-card{
+background:white;
+border:1px solid #e5e7eb;
+padding:20px;
+border-radius:8px;
+text-align:center;
+font-weight:500;
+}
+
 /* PROJECT GRID */
 .projects{
 display:grid;
@@ -115,6 +141,7 @@ gap:30px;
 }
 
 .card{
+background:white;
 border:1px solid #e5e7eb;
 border-radius:10px;
 padding:25px;
@@ -143,6 +170,12 @@ color:#2563eb;
 font-weight:500;
 }
 
+/* CONTACT */
+.contact p{
+margin-bottom:10px;
+color:#4b5563;
+}
+
 /* FOOTER */
 footer{
 padding:40px 80px;
@@ -167,6 +200,7 @@ section{ padding:60px 20px; }
 <div><strong>Gillman Khan</strong></div>
 <div>
 <a href="#about">About</a>
+<a href="#skills">Skills</a>
 <a href="#projects">Projects</a>
 <a href="#contact">Contact</a>
 </div>
@@ -174,11 +208,11 @@ section{ padding:60px 20px; }
 
 <header>
 <h1>
-Building <span class="highlight">scalable backend systems</span> and production-ready software.
+Software Developer building <span class="highlight">scalable backend systems</span>.
 </h1>
 <p>
-Software Engineer specializing in Java, Data Structures & Algorithms, and backend architecture. 
-Focused on designing efficient, secure, and maintainable systems aligned with real-world production standards.
+Backend-focused Software Developer specializing in Java, Data Structures & Algorithms, and system design fundamentals. 
+I design efficient, maintainable, and production-ready applications aligned with real-world engineering standards.
 </p>
 <div>
 <a href="resume.pdf" download class="btn primary">Download Resume</a>
@@ -189,10 +223,21 @@ Focused on designing efficient, secure, and maintainable systems aligned with re
 <section id="about">
 <h2>About</h2>
 <p>
-Computer Science undergraduate (2027) with strong foundations in algorithmic problem solving, 
-system design principles, and backend development. 
-Experienced in building application logic, integrating APIs, and structuring maintainable architectures.
+Computer Science undergraduate (2027) with strong problem-solving ability and backend development focus. 
+Experienced in building structured application logic, integrating APIs, and implementing efficient data-driven solutions.
 </p>
+</section>
+
+<section id="skills">
+<h2>Technical Skills</h2>
+<div class="skills">
+<div class="skill-card">Java</div>
+<div class="skill-card">Data Structures & Algorithms</div>
+<div class="skill-card">Object-Oriented Programming</div>
+<div class="skill-card">REST API Integration</div>
+<div class="skill-card">SQL / Database Systems</div>
+<div class="skill-card">Git & Version Control</div>
+</div>
 </section>
 
 <section id="projects">
@@ -202,8 +247,7 @@ Experienced in building application logic, integrating APIs, and structuring mai
 <div class="card">
 <h3>Digital Fraud Detection System</h3>
 <p>
-Designed fraud detection logic using optimized Java data structures. 
-Focused on efficiency, scalability, and edge-case handling.
+Implemented fraud detection logic using optimized data structures and algorithmic techniques to improve processing efficiency.
 </p>
 <a href="https://github.com/Gillmankhan07" target="_blank">View on GitHub →</a>
 </div>
@@ -211,17 +255,15 @@ Focused on efficiency, scalability, and edge-case handling.
 <div class="card">
 <h3>Restaurant Web Application</h3>
 <p>
-Built a responsive frontend with structured layout and clean component organization.
-Emphasized usability and maintainable code practices.
+Developed responsive frontend architecture with structured layout and maintainable component organization.
 </p>
 <a href="https://github.com/Gillmankhan07" target="_blank">View on GitHub →</a>
 </div>
 
 <div class="card">
-<h3>CTF Security Practice</h3>
+<h3>Backend Practice Projects</h3>
 <p>
-Conducted vulnerability analysis and exploitation exercises to strengthen understanding 
-of secure coding and backend security fundamentals.
+Built multiple backend logic implementations focusing on scalability, clean code, and performance optimization.
 </p>
 <a href="https://github.com/Gillmankhan07" target="_blank">View on GitHub →</a>
 </div>
@@ -229,7 +271,7 @@ of secure coding and backend security fundamentals.
 </div>
 </section>
 
-<section id="contact">
+<section id="contact" class="contact">
 <h2>Contact</h2>
 <p>Email: gillmankhanimmortal@gmail.com</p>
 <p>GitHub: github.com/Gillmankhan07</p>
@@ -237,7 +279,7 @@ of secure coding and backend security fundamentals.
 </section>
 
 <footer>
-© 2026 Gillman Khan — Software Engineering Portfolio
+© 2026 Gillman Khan — Software Developer Portfolio
 </footer>
 
 </body>
