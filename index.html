@@ -19,10 +19,9 @@ body{
 font-family:'Inter',sans-serif;
 background:#f9fafb;
 color:#111827;
-line-height:1.6;
+line-height:1.7;
 }
 
-/* NAVBAR */
 .navbar{
 position:fixed;
 top:0;
@@ -47,13 +46,11 @@ font-weight:500;
 color:#111827;
 }
 
-/* HERO */
 header{
-min-height:85vh;
+min-height:90vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
-align-items:flex-start;
 padding:120px 80px 60px 80px;
 max-width:1100px;
 margin:auto;
@@ -71,7 +68,7 @@ color:#2563eb;
 
 header p{
 font-size:1.1rem;
-max-width:650px;
+max-width:700px;
 color:#4b5563;
 margin-bottom:30px;
 }
@@ -91,23 +88,13 @@ background:#2563eb;
 color:white;
 }
 
-.primary:hover{
-background:#1e40af;
-}
-
 .secondary{
 border:1px solid #2563eb;
 color:#2563eb;
 }
 
-.secondary:hover{
-background:#2563eb;
-color:white;
-}
-
-/* SECTION */
 section{
-padding:80px 80px;
+padding:90px 80px;
 max-width:1100px;
 margin:auto;
 }
@@ -117,24 +104,7 @@ font-size:1.8rem;
 margin-bottom:30px;
 }
 
-/* SKILLS GRID */
-.skills{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-}
-
-.skill-card{
-background:white;
-border:1px solid #e5e7eb;
-padding:20px;
-border-radius:8px;
-text-align:center;
-font-weight:500;
-}
-
-/* PROJECT GRID */
-.projects{
+.grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:30px;
@@ -164,19 +134,20 @@ font-size:0.95rem;
 margin-bottom:15px;
 }
 
-.card a{
-text-decoration:none;
-color:#2563eb;
+.skill-list{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+}
+
+.skill-box{
+background:white;
+border:1px solid #e5e7eb;
+padding:15px;
+border-radius:8px;
 font-weight:500;
 }
 
-/* CONTACT */
-.contact p{
-margin-bottom:10px;
-color:#4b5563;
-}
-
-/* FOOTER */
 footer{
 padding:40px 80px;
 border-top:1px solid #e5e7eb;
@@ -185,7 +156,6 @@ font-size:0.9rem;
 text-align:center;
 }
 
-/* RESPONSIVE */
 @media(max-width:768px){
 .navbar{ padding:15px 20px; }
 header{ padding:120px 20px 40px 20px; }
@@ -201,6 +171,7 @@ section{ padding:60px 20px; }
 <div>
 <a href="#about">About</a>
 <a href="#skills">Skills</a>
+<a href="#experience">Experience</a>
 <a href="#projects">Projects</a>
 <a href="#contact">Contact</a>
 </div>
@@ -208,11 +179,11 @@ section{ padding:60px 20px; }
 
 <header>
 <h1>
-Software Developer building <span class="highlight">scalable backend systems</span>.
+Software Developer building <span class="highlight">efficient, scalable backend systems</span>.
 </h1>
 <p>
-Backend-focused Software Developer specializing in Java, Data Structures & Algorithms, and system design fundamentals. 
-I design efficient, maintainable, and production-ready applications aligned with real-world engineering standards.
+Backend-focused Software Developer specializing in Java, Data Structures & Algorithms, and system design principles. 
+I focus on writing clean, maintainable, and production-ready code aligned with industry engineering standards.
 </p>
 <div>
 <a href="resume.pdf" download class="btn primary">Download Resume</a>
@@ -221,57 +192,85 @@ I design efficient, maintainable, and production-ready applications aligned with
 </header>
 
 <section id="about">
-<h2>About</h2>
+<h2>About Me</h2>
 <p>
-Computer Science undergraduate (2027) with strong problem-solving ability and backend development focus. 
-Experienced in building structured application logic, integrating APIs, and implementing efficient data-driven solutions.
+I am a Computer Science undergraduate (2027) with a strong foundation in algorithmic problem-solving and backend development. 
+My work focuses on designing efficient logic, optimizing performance, and structuring scalable application architecture. 
+I continuously improve my understanding of system design, software engineering best practices, and clean code principles.
 </p>
 </section>
 
 <section id="skills">
 <h2>Technical Skills</h2>
-<div class="skills">
-<div class="skill-card">Java</div>
-<div class="skill-card">Data Structures & Algorithms</div>
-<div class="skill-card">Object-Oriented Programming</div>
-<div class="skill-card">REST API Integration</div>
-<div class="skill-card">SQL / Database Systems</div>
-<div class="skill-card">Git & Version Control</div>
+<div class="skill-list">
+<div class="skill-box">Java (Primary Language)</div>
+<div class="skill-box">Data Structures & Algorithms</div>
+<div class="skill-box">Object-Oriented Programming</div>
+<div class="skill-box">REST API Integration</div>
+<div class="skill-box">SQL & Database Design</div>
+<div class="skill-box">Git & Version Control</div>
+<div class="skill-box">Operating Systems Fundamentals</div>
+<div class="skill-box">Backend Logic Development</div>
+</div>
+</section>
+
+<section id="experience">
+<h2>Engineering Experience</h2>
+<div class="grid">
+
+<div class="card">
+<h3>Software Engineering Simulation – JP Morgan</h3>
+<p>
+Completed a virtual software engineering experience program focusing on backend architecture concepts, 
+API integration, and data pipeline workflows. Strengthened understanding of real-world engineering practices.
+</p>
+</div>
+
+<div class="card">
+<h3>Independent Backend Projects</h3>
+<p>
+Developed multiple backend-focused applications implementing optimized data structures, 
+modular design patterns, and structured error handling to simulate production-grade workflows.
+</p>
+</div>
+
 </div>
 </section>
 
 <section id="projects">
 <h2>Selected Projects</h2>
-<div class="projects">
+<div class="grid">
 
 <div class="card">
 <h3>Digital Fraud Detection System</h3>
 <p>
-Implemented fraud detection logic using optimized data structures and algorithmic techniques to improve processing efficiency.
+Designed fraud detection logic using efficient Java data structures and algorithmic techniques to 
+handle edge cases and improve processing efficiency.
 </p>
-<a href="https://github.com/Gillmankhan07" target="_blank">View on GitHub →</a>
+<a href="https://github.com/Gillmankhan07" target="_blank">View Project →</a>
 </div>
 
 <div class="card">
 <h3>Restaurant Web Application</h3>
 <p>
-Developed responsive frontend architecture with structured layout and maintainable component organization.
+Built a structured frontend interface with clean layout organization and maintainable code structure.
 </p>
-<a href="https://github.com/Gillmankhan07" target="_blank">View on GitHub →</a>
+<a href="https://github.com/Gillmankhan07" target="_blank">View Project →</a>
 </div>
 
 <div class="card">
-<h3>Backend Practice Projects</h3>
+<h3>Security & Backend Practice Labs</h3>
 <p>
-Built multiple backend logic implementations focusing on scalability, clean code, and performance optimization.
+Implemented backend logic improvements and security-focused testing practices to strengthen understanding 
+of system vulnerabilities and secure coding principles.
 </p>
-<a href="https://github.com/Gillmankhan07" target="_blank">View on GitHub →</a>
+<a href="https://github.com/Gillmankhan07" target="_blank">View Project →</a>
 </div>
 
 </div>
 </section>
 
-<section id="contact" class="contact">
+<section id="contact">
 <h2>Contact</h2>
 <p>Email: gillmankhanimmortal@gmail.com</p>
 <p>GitHub: github.com/Gillmankhan07</p>
