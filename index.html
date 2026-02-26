@@ -8,18 +8,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
-}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
 
 body{
 font-family:'Inter',sans-serif;
 background:#ffffff;
 color:#111827;
-line-height:1.7;
+transition:0.3s;
+line-height:1.6;
+}
+
+.dark{
+background:#0f172a;
+color:#f1f5f9;
 }
 
 .navbar{
@@ -35,11 +36,24 @@ border-bottom:1px solid #e5e7eb;
 z-index:1000;
 }
 
+.dark .navbar{
+background:#0f172a;
+border-bottom:1px solid #1e293b;
+}
+
 .navbar a{
 text-decoration:none;
-color:#374151;
-margin-left:30px;
+margin-left:25px;
+color:inherit;
 font-weight:500;
+}
+
+.toggle{
+cursor:pointer;
+padding:6px 12px;
+border:1px solid #2563eb;
+border-radius:5px;
+font-size:0.9rem;
 }
 
 header{
@@ -54,7 +68,6 @@ margin:auto;
 
 header h1{
 font-size:3rem;
-font-weight:700;
 margin-bottom:20px;
 }
 
@@ -64,18 +77,28 @@ color:#2563eb;
 
 header p{
 font-size:1.1rem;
-max-width:700px;
+max-width:650px;
 color:#4b5563;
-margin-bottom:30px;
+margin-bottom:25px;
+}
+
+.dark header p{
+color:#cbd5e1;
+}
+
+.resume-actions{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+margin-top:15px;
 }
 
 .btn{
-display:inline-block;
 padding:12px 22px;
 border-radius:6px;
 text-decoration:none;
 font-weight:500;
-margin-right:15px;
+transition:0.2s;
 }
 
 .primary{
@@ -83,172 +106,82 @@ background:#2563eb;
 color:white;
 }
 
+.primary:hover{
+background:#1e40af;
+}
+
 .secondary{
 border:1px solid #2563eb;
 color:#2563eb;
+background:transparent;
+}
+
+.secondary:hover{
+background:#2563eb;
+color:white;
 }
 
 section{
-padding:90px 80px;
+padding:80px 80px;
 max-width:1100px;
 margin:auto;
 }
 
-h2{
-font-size:1.8rem;
-margin-bottom:30px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
-}
-
-.card{
-border:1px solid #e5e7eb;
-border-radius:10px;
-padding:25px;
-transition:0.2s;
-}
-
-.card:hover{
-transform:translateY(-5px);
-box-shadow:0 10px 25px rgba(0,0,0,0.05);
-}
-
-.metric{
-font-weight:600;
-color:#2563eb;
-}
-
 footer{
-padding:40px 80px;
-border-top:1px solid #e5e7eb;
-color:#6b7280;
-font-size:0.9rem;
 text-align:center;
+padding:40px;
+border-top:1px solid #e5e7eb;
+font-size:0.9rem;
+}
+
+.dark footer{
+border-top:1px solid #1e293b;
 }
 
 @media(max-width:768px){
-.navbar{ padding:15px 20px; }
-header{ padding:120px 20px 40px 20px; }
-section{ padding:60px 20px; }
+.navbar{padding:15px 20px;}
+header{padding:120px 20px 40px 20px;}
+section{padding:60px 20px;}
 }
 </style>
 </head>
 
 <body>
 
-<nav class="navbar">
-<div><strong>Gillman Khan</strong></div>
+<div class="navbar">
+<strong>Gillman Khan</strong>
 <div>
-<a href="#about">About</a>
-<a href="#skills">Skills</a>
-<a href="#experience">Experience</a>
-<a href="#projects">Projects</a>
-<a href="#design">System Design</a>
+<a href="index.html">Home</a>
+<a href="projects.html">Projects</a>
+<a href="blog.html">Blog</a>
 <a href="#contact">Contact</a>
+<span class="toggle" onclick="toggleMode()">Mode</span>
 </div>
-</nav>
+</div>
 
 <header>
 <h1>
-Software Developer focused on <span class="highlight">scalable backend systems</span> and clean architecture.
+Software Developer building <span class="highlight">scalable backend systems</span>.
 </h1>
+
 <p>
-Backend-oriented engineer specializing in Java, Data Structures & Algorithms, and performance-focused application logic.
-I build maintainable systems with emphasis on efficiency, modularity, and long-term scalability.
+Backend-focused engineer specializing in Java, Data Structures & Algorithms, and clean architecture. 
+Focused on writing production-ready, maintainable software aligned with real-world engineering standards.
 </p>
-<div>
-<a href="resume.pdf" download class="btn primary">Download Resume</a>
+
+<div class="resume-actions">
+<a href="resume.pdf" target="_blank" class="btn primary">View Resume</a>
+<a href="resume.pdf" download class="btn secondary">Download Resume</a>
 <a href="#contact" class="btn secondary">Contact</a>
 </div>
 </header>
 
-<section id="about">
+<section>
 <h2>About</h2>
 <p>
-Computer Science undergraduate (2027) with strong problem-solving skills and backend engineering focus.
-I emphasize writing optimized algorithms, structured architecture, and production-oriented application logic.
-Continuously improving knowledge in system design, scalability strategies, and software engineering best practices.
-</p>
-</section>
-
-<section id="skills">
-<h2>Technical Skills</h2>
-<p><strong>Languages:</strong> Java (Primary), Python</p>
-<p><strong>Core Concepts:</strong> Data Structures & Algorithms, OOP, Operating Systems, DBMS</p>
-<p><strong>Backend:</strong> REST APIs, Modular Architecture, Structured Exception Handling</p>
-<p><strong>Tools:</strong> Git, GitHub, VS Code</p>
-</section>
-
-<section id="experience">
-<h2>Engineering Experience</h2>
-<div class="grid">
-
-<div class="card">
-<h3>JP Morgan Software Engineering Simulation</h3>
-<p>
-Worked on backend workflow simulation involving API communication and structured data handling.
-Improved architectural understanding of real-world financial systems.
-</p>
-<p class="metric">Focused on backend integration & scalable design principles.</p>
-</div>
-
-<div class="card">
-<h3>Independent Backend Development</h3>
-<p>
-Developed structured Java-based logic systems implementing optimized data structures and efficient algorithms.
-Focused on reducing computational complexity and improving maintainability.
-</p>
-<p class="metric">Optimized algorithm efficiency and improved code modularity.</p>
-</div>
-
-</div>
-</section>
-
-<section id="projects">
-<h2>Selected Projects</h2>
-<div class="grid">
-
-<div class="card">
-<h3>Digital Fraud Detection System</h3>
-<p>
-Designed fraud detection logic using optimized data structures.
-Implemented validation layers and edge-case handling for reliability.
-</p>
-<p class="metric">Improved logical processing efficiency through structured algorithm design.</p>
-</div>
-
-<div class="card">
-<h3>Restaurant Web Application</h3>
-<p>
-Built structured frontend architecture emphasizing maintainable code and component organization.
-</p>
-<p class="metric">Enhanced UI responsiveness and layout scalability.</p>
-</div>
-
-<div class="card">
-<h3>Backend Practice Labs</h3>
-<p>
-Implemented modular backend logic simulating production-level workflows.
-Focused on clean architecture and structured error management.
-</p>
-<p class="metric">Strengthened understanding of scalable backend design.</p>
-</div>
-
-</div>
-</section>
-
-<section id="design">
-<h2>System Design Approach</h2>
-<p>
-• Prioritize modular architecture and separation of concerns.  
-• Optimize algorithmic complexity before scaling infrastructure.  
-• Design APIs with clear contracts and validation layers.  
-• Emphasize maintainability and readability over premature optimization.  
-• Plan for horizontal scalability and structured data flow.
+Computer Science undergraduate (2027) with strong foundations in backend engineering,
+algorithm optimization, and scalable system design. Continuously improving in system
+design principles and production-level software architecture.
 </p>
 </section>
 
@@ -262,6 +195,12 @@ Focused on clean architecture and structured error management.
 <footer>
 © 2026 Gillman Khan — Software Developer
 </footer>
+
+<script>
+function toggleMode(){
+document.body.classList.toggle("dark");
+}
+</script>
 
 </body>
 </html>
