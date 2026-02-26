@@ -23,6 +23,19 @@ line-height:1.7;
 overflow-x:hidden;
 }
 
+/* BACKGROUND GLOW */
+body::before{
+content:"";
+position:fixed;
+top:-200px;
+left:-200px;
+width:600px;
+height:600px;
+background:radial-gradient(circle,#3b82f6 0%,transparent 70%);
+opacity:0.15;
+z-index:-1;
+}
+
 /* NAVBAR */
 .navbar{
 position:fixed;
@@ -32,7 +45,7 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:20px 80px;
-background:rgba(15,23,42,0.9);
+background:rgba(15,23,42,0.85);
 backdrop-filter:blur(10px);
 border-bottom:1px solid #1e293b;
 z-index:1000;
@@ -43,10 +56,10 @@ text-decoration:none;
 color:#cbd5e1;
 margin-left:25px;
 font-weight:500;
-transition:0.3s;
+position:relative;
 }
 
-.navbar a:hover{
+.navbar a.active{
 color:#3b82f6;
 }
 
@@ -64,23 +77,21 @@ gap:40px;
 
 .hero-left{
 flex:1;
-animation:fadeUp 1s ease;
 }
 
 .hero-right{
 flex:1;
 text-align:right;
-animation:fadeUp 1.2s ease;
 }
 
 .hero-right img{
 width:260px;
-border-radius:18px;
-box-shadow:0 20px 50px rgba(0,0,0,0.4);
+border-radius:20px;
+box-shadow:0 25px 60px rgba(0,0,0,0.4);
 }
 
 header h1{
-font-size:3.2rem;
+font-size:3.3rem;
 margin-bottom:20px;
 }
 
@@ -103,7 +114,7 @@ flex-wrap:wrap;
 
 .btn{
 padding:12px 24px;
-border-radius:10px;
+border-radius:12px;
 text-decoration:none;
 font-weight:500;
 transition:0.3s;
@@ -115,15 +126,13 @@ color:white;
 }
 
 .primary:hover{
-background:#2563eb;
 transform:translateY(-3px);
-box-shadow:0 10px 25px rgba(59,130,246,0.4);
+box-shadow:0 10px 30px rgba(59,130,246,0.4);
 }
 
 .secondary{
 border:1px solid #3b82f6;
 color:#3b82f6;
-background:transparent;
 }
 
 .secondary:hover{
@@ -133,41 +142,47 @@ color:white;
 
 /* SECTIONS */
 section{
-padding:100px 80px;
+padding:120px 80px;
 max-width:1100px;
 margin:auto;
-animation:fadeUp 1s ease;
+opacity:0;
+transform:translateY(40px);
+transition:0.8s ease;
+}
+
+section.show{
+opacity:1;
+transform:translateY(0);
 }
 
 h2{
 font-size:2rem;
-margin-bottom:30px;
-color:white;
+margin-bottom:40px;
 }
 
 /* METRICS */
 .metrics{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:25px;
 text-align:center;
 }
 
 .metric-box{
 background:#1e293b;
-padding:35px;
-border-radius:16px;
+padding:40px;
+border-radius:20px;
 border:1px solid #334155;
 transition:0.3s;
 }
 
 .metric-box:hover{
-transform:translateY(-6px);
-box-shadow:0 20px 40px rgba(0,0,0,0.4);
+transform:translateY(-8px);
+box-shadow:0 30px 60px rgba(0,0,0,0.5);
 }
 
 .metric-number{
-font-size:2.2rem;
+font-size:2.4rem;
 font-weight:700;
 color:#3b82f6;
 margin-bottom:10px;
@@ -176,16 +191,16 @@ margin-bottom:10px;
 /* PROJECTS */
 .project{
 background:#1e293b;
-padding:30px;
-border-radius:18px;
+padding:35px;
+border-radius:20px;
 border:1px solid #334155;
-margin-bottom:25px;
+margin-bottom:30px;
 transition:0.3s;
 }
 
 .project:hover{
-transform:translateY(-8px);
-box-shadow:0 25px 50px rgba(0,0,0,0.4);
+transform:translateY(-10px);
+box-shadow:0 30px 70px rgba(0,0,0,0.5);
 }
 
 .metric{
@@ -200,18 +215,6 @@ text-align:center;
 padding:60px;
 border-top:1px solid #1e293b;
 color:#94a3b8;
-}
-
-/* ANIMATION */
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(30px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
 }
 
 /* RESPONSIVE */
@@ -240,7 +243,6 @@ text-align:center;
 </div>
 
 <header>
-
 <div class="hero-left">
 <h1>
 Backend Developer building <span class="highlight">scalable systems</span>.
@@ -261,7 +263,6 @@ and production-ready system design thinking.
 <div class="hero-right">
 <img src="profile.jpg" alt="Profile Photo">
 </div>
-
 </header>
 
 <section id="metrics">
@@ -275,7 +276,7 @@ DSA Problems Solved
 
 <div class="metric-box">
 <div class="metric-number">30%</div>
-Logic Optimization Gain
+Optimization Improvement
 </div>
 
 <div class="metric-box">
@@ -291,18 +292,17 @@ Backend Projects
 <div class="project">
 <h3>Digital Fraud Detection System</h3>
 <p>
-Designed rule-based fraud detection using optimized HashMap and Set structures,
-improving lookup complexity from O(n²) to O(n).
+Implemented optimized fraud detection logic improving lookup complexity from O(n²) to O(n).
 </p>
-<div class="metric">Focus: Algorithm optimization & scalable backend logic</div>
+<div class="metric">Focus: Scalable backend & algorithm efficiency</div>
 </div>
 
 <div class="project">
 <h3>Restaurant Web Application</h3>
 <p>
-Built maintainable and responsive UI architecture emphasizing modular layout design.
+Built maintainable UI architecture emphasizing modular structure and responsiveness.
 </p>
-<div class="metric">Focus: Clean structure & scalable UI design</div>
+<div class="metric">Focus: Clean design & maintainable structure</div>
 </div>
 
 </section>
@@ -311,8 +311,7 @@ Built maintainable and responsive UI architecture emphasizing modular layout des
 <h2>Engineering Philosophy</h2>
 <p>
 I prioritize clarity over complexity, optimize algorithms before scaling infrastructure,
-and design systems with modular architecture to ensure maintainability.
-I strongly believe in understanding trade-offs between performance, readability, and scalability.
+and design systems with modular architecture to ensure maintainability and scalability.
 </p>
 </section>
 
@@ -326,6 +325,20 @@ I strongly believe in understanding trade-offs between performance, readability,
 <footer>
 © 2026 Gillman Khan — Software Developer
 </footer>
+
+<script>
+/* Scroll Reveal */
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+sections.forEach(sec => {
+const top = sec.getBoundingClientRect().top;
+if(top < window.innerHeight - 100){
+sec.classList.add("show");
+}
+});
+});
+</script>
 
 </body>
 </html>
