@@ -17,9 +17,10 @@ scroll-behavior:smooth;
 
 body{
 font-family:'Inter',sans-serif;
-background:#f8fafc;
-color:#0f172a;
+background:#0f172a;
+color:#f1f5f9;
 line-height:1.7;
+overflow-x:hidden;
 }
 
 /* NAVBAR */
@@ -31,21 +32,22 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:20px 80px;
-background:white;
-border-bottom:1px solid #e2e8f0;
+background:rgba(15,23,42,0.9);
+backdrop-filter:blur(10px);
+border-bottom:1px solid #1e293b;
 z-index:1000;
 }
 
 .navbar a{
 text-decoration:none;
-color:#475569;
+color:#cbd5e1;
 margin-left:25px;
 font-weight:500;
-transition:0.2s;
+transition:0.3s;
 }
 
 .navbar a:hover{
-color:#2563eb;
+color:#3b82f6;
 }
 
 /* HERO */
@@ -62,17 +64,19 @@ gap:40px;
 
 .hero-left{
 flex:1;
+animation:fadeUp 1s ease;
 }
 
 .hero-right{
 flex:1;
 text-align:right;
+animation:fadeUp 1.2s ease;
 }
 
 .hero-right img{
 width:260px;
-border-radius:16px;
-box-shadow:0 15px 35px rgba(0,0,0,0.08);
+border-radius:18px;
+box-shadow:0 20px 50px rgba(0,0,0,0.4);
 }
 
 header h1{
@@ -81,12 +85,12 @@ margin-bottom:20px;
 }
 
 .highlight{
-color:#2563eb;
+color:#3b82f6;
 }
 
 header p{
 font-size:1.15rem;
-color:#475569;
+color:#cbd5e1;
 margin-bottom:30px;
 max-width:650px;
 }
@@ -99,30 +103,31 @@ flex-wrap:wrap;
 
 .btn{
 padding:12px 24px;
-border-radius:8px;
+border-radius:10px;
 text-decoration:none;
 font-weight:500;
-transition:0.25s ease;
+transition:0.3s;
 }
 
 .primary{
-background:#2563eb;
+background:#3b82f6;
 color:white;
 }
 
 .primary:hover{
-background:#1e40af;
-transform:translateY(-2px);
+background:#2563eb;
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(59,130,246,0.4);
 }
 
 .secondary{
-border:1px solid #2563eb;
-color:#2563eb;
-background:white;
+border:1px solid #3b82f6;
+color:#3b82f6;
+background:transparent;
 }
 
 .secondary:hover{
-background:#2563eb;
+background:#3b82f6;
 color:white;
 }
 
@@ -131,11 +136,13 @@ section{
 padding:100px 80px;
 max-width:1100px;
 margin:auto;
+animation:fadeUp 1s ease;
 }
 
 h2{
-font-size:1.9rem;
+font-size:2rem;
 margin-bottom:30px;
+color:white;
 }
 
 /* METRICS */
@@ -147,46 +154,42 @@ text-align:center;
 }
 
 .metric-box{
-background:white;
-padding:30px;
-border-radius:12px;
-border:1px solid #e2e8f0;
+background:#1e293b;
+padding:35px;
+border-radius:16px;
+border:1px solid #334155;
+transition:0.3s;
+}
+
+.metric-box:hover{
+transform:translateY(-6px);
+box-shadow:0 20px 40px rgba(0,0,0,0.4);
 }
 
 .metric-number{
-font-size:2rem;
+font-size:2.2rem;
 font-weight:700;
-color:#2563eb;
-margin-bottom:8px;
-}
-
-/* TIMELINE */
-.timeline{
-border-left:3px solid #2563eb;
-padding-left:25px;
-}
-
-.timeline-item{
-margin-bottom:35px;
+color:#3b82f6;
+margin-bottom:10px;
 }
 
 /* PROJECTS */
 .project{
-background:white;
-padding:25px;
-border-radius:12px;
-border:1px solid #e2e8f0;
+background:#1e293b;
+padding:30px;
+border-radius:18px;
+border:1px solid #334155;
 margin-bottom:25px;
-transition:0.25s;
+transition:0.3s;
 }
 
 .project:hover{
-transform:translateY(-6px);
-box-shadow:0 12px 25px rgba(0,0,0,0.05);
+transform:translateY(-8px);
+box-shadow:0 25px 50px rgba(0,0,0,0.4);
 }
 
 .metric{
-color:#2563eb;
+color:#3b82f6;
 font-weight:600;
 margin-top:10px;
 }
@@ -194,9 +197,21 @@ margin-top:10px;
 /* FOOTER */
 footer{
 text-align:center;
-padding:50px;
-border-top:1px solid #e2e8f0;
-color:#64748b;
+padding:60px;
+border-top:1px solid #1e293b;
+color:#94a3b8;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
 /* RESPONSIVE */
@@ -217,24 +232,24 @@ text-align:center;
 <div class="navbar">
 <strong>Gillman Khan</strong>
 <div>
-<a href="#about">About</a>
 <a href="#metrics">Highlights</a>
-<a href="#experience">Experience</a>
 <a href="#projects">Projects</a>
+<a href="#about">Philosophy</a>
 <a href="#contact">Contact</a>
 </div>
 </div>
 
 <header>
+
 <div class="hero-left">
 <h1>
-Building <span class="highlight">scalable backend systems</span> with strong algorithmic foundations.
+Backend Developer building <span class="highlight">scalable systems</span>.
 </h1>
 
 <p>
-Backend-focused Software Developer with 200+ DSA problems solved.
-Focused on writing efficient, maintainable, and production-ready code.
-Actively strengthening system design and interview performance for high-impact internships.
+Software Developer with 200+ DSA problems solved.
+Focused on algorithmic efficiency, modular backend architecture,
+and production-ready system design thinking.
 </p>
 
 <div class="resume-actions">
@@ -246,6 +261,7 @@ Actively strengthening system design and interview performance for high-impact i
 <div class="hero-right">
 <img src="profile.jpg" alt="Profile Photo">
 </div>
+
 </header>
 
 <section id="metrics">
@@ -254,36 +270,19 @@ Actively strengthening system design and interview performance for high-impact i
 <div class="metrics">
 <div class="metric-box">
 <div class="metric-number">200+</div>
-Problem Solving Challenges
+DSA Problems Solved
 </div>
 
 <div class="metric-box">
 <div class="metric-number">30%</div>
-Logic Optimization Improvement
+Logic Optimization Gain
 </div>
 
 <div class="metric-box">
 <div class="metric-number">3+</div>
-Major Backend Projects
+Backend Projects
 </div>
 </div>
-</section>
-
-<section id="experience">
-<h2>Engineering Experience</h2>
-
-<div class="timeline">
-<div class="timeline-item">
-<h3>JP Morgan Software Engineering Simulation</h3>
-<p>Worked on backend workflow concepts, API interaction models, and structured financial data handling.</p>
-</div>
-
-<div class="timeline-item">
-<h3>Independent Backend Development</h3>
-<p>Built modular backend logic systems focusing on scalability, validation layers, and structured exception handling.</p>
-</div>
-</div>
-
 </section>
 
 <section id="projects">
@@ -292,17 +291,18 @@ Major Backend Projects
 <div class="project">
 <h3>Digital Fraud Detection System</h3>
 <p>
-Implemented rule-based fraud detection using optimized data structures, improving processing efficiency from O(n²) to O(n).
+Designed rule-based fraud detection using optimized HashMap and Set structures,
+improving lookup complexity from O(n²) to O(n).
 </p>
-<div class="metric">Focus: Algorithm optimization & scalable logic design</div>
+<div class="metric">Focus: Algorithm optimization & scalable backend logic</div>
 </div>
 
 <div class="project">
 <h3>Restaurant Web Application</h3>
 <p>
-Developed structured and responsive UI architecture emphasizing maintainability and modular layout design.
+Built maintainable and responsive UI architecture emphasizing modular layout design.
 </p>
-<div class="metric">Focus: Clean architecture & maintainable code</div>
+<div class="metric">Focus: Clean structure & scalable UI design</div>
 </div>
 
 </section>
@@ -310,9 +310,9 @@ Developed structured and responsive UI architecture emphasizing maintainability 
 <section id="about">
 <h2>Engineering Philosophy</h2>
 <p>
-I prioritize clarity over complexity, optimize before scaling infrastructure,
-and design systems with modular architecture to ensure long-term maintainability.
-Strong belief in understanding trade-offs between performance and readability.
+I prioritize clarity over complexity, optimize algorithms before scaling infrastructure,
+and design systems with modular architecture to ensure maintainability.
+I strongly believe in understanding trade-offs between performance, readability, and scalability.
 </p>
 </section>
 
