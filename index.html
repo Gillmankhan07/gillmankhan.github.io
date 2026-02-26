@@ -17,7 +17,7 @@ scroll-behavior:smooth;
 
 body{
 font-family:'Inter',sans-serif;
-background:#f9fafb;
+background:#ffffff;
 color:#111827;
 line-height:1.7;
 }
@@ -40,10 +40,6 @@ text-decoration:none;
 color:#374151;
 margin-left:30px;
 font-weight:500;
-}
-
-.navbar a:hover{
-color:#111827;
 }
 
 header{
@@ -80,7 +76,6 @@ border-radius:6px;
 text-decoration:none;
 font-weight:500;
 margin-right:15px;
-transition:0.2s;
 }
 
 .primary{
@@ -111,7 +106,6 @@ gap:30px;
 }
 
 .card{
-background:white;
 border:1px solid #e5e7eb;
 border-radius:10px;
 padding:25px;
@@ -123,29 +117,9 @@ transform:translateY(-5px);
 box-shadow:0 10px 25px rgba(0,0,0,0.05);
 }
 
-.card h3{
-margin-bottom:10px;
-font-size:1.2rem;
-}
-
-.card p{
-color:#4b5563;
-font-size:0.95rem;
-margin-bottom:15px;
-}
-
-.skill-list{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:15px;
-}
-
-.skill-box{
-background:white;
-border:1px solid #e5e7eb;
-padding:15px;
-border-radius:8px;
-font-weight:500;
+.metric{
+font-weight:600;
+color:#2563eb;
 }
 
 footer{
@@ -173,17 +147,18 @@ section{ padding:60px 20px; }
 <a href="#skills">Skills</a>
 <a href="#experience">Experience</a>
 <a href="#projects">Projects</a>
+<a href="#design">System Design</a>
 <a href="#contact">Contact</a>
 </div>
 </nav>
 
 <header>
 <h1>
-Software Developer building <span class="highlight">efficient, scalable backend systems</span>.
+Software Developer focused on <span class="highlight">scalable backend systems</span> and clean architecture.
 </h1>
 <p>
-Backend-focused Software Developer specializing in Java, Data Structures & Algorithms, and system design principles. 
-I focus on writing clean, maintainable, and production-ready code aligned with industry engineering standards.
+Backend-oriented engineer specializing in Java, Data Structures & Algorithms, and performance-focused application logic.
+I build maintainable systems with emphasis on efficiency, modularity, and long-term scalability.
 </p>
 <div>
 <a href="resume.pdf" download class="btn primary">Download Resume</a>
@@ -192,26 +167,20 @@ I focus on writing clean, maintainable, and production-ready code aligned with i
 </header>
 
 <section id="about">
-<h2>About Me</h2>
+<h2>About</h2>
 <p>
-I am a Computer Science undergraduate (2027) with a strong foundation in algorithmic problem-solving and backend development. 
-My work focuses on designing efficient logic, optimizing performance, and structuring scalable application architecture. 
-I continuously improve my understanding of system design, software engineering best practices, and clean code principles.
+Computer Science undergraduate (2027) with strong problem-solving skills and backend engineering focus.
+I emphasize writing optimized algorithms, structured architecture, and production-oriented application logic.
+Continuously improving knowledge in system design, scalability strategies, and software engineering best practices.
 </p>
 </section>
 
 <section id="skills">
 <h2>Technical Skills</h2>
-<div class="skill-list">
-<div class="skill-box">Java (Primary Language)</div>
-<div class="skill-box">Data Structures & Algorithms</div>
-<div class="skill-box">Object-Oriented Programming</div>
-<div class="skill-box">REST API Integration</div>
-<div class="skill-box">SQL & Database Design</div>
-<div class="skill-box">Git & Version Control</div>
-<div class="skill-box">Operating Systems Fundamentals</div>
-<div class="skill-box">Backend Logic Development</div>
-</div>
+<p><strong>Languages:</strong> Java (Primary), Python</p>
+<p><strong>Core Concepts:</strong> Data Structures & Algorithms, OOP, Operating Systems, DBMS</p>
+<p><strong>Backend:</strong> REST APIs, Modular Architecture, Structured Exception Handling</p>
+<p><strong>Tools:</strong> Git, GitHub, VS Code</p>
 </section>
 
 <section id="experience">
@@ -219,19 +188,21 @@ I continuously improve my understanding of system design, software engineering b
 <div class="grid">
 
 <div class="card">
-<h3>Software Engineering Simulation – JP Morgan</h3>
+<h3>JP Morgan Software Engineering Simulation</h3>
 <p>
-Completed a virtual software engineering experience program focusing on backend architecture concepts, 
-API integration, and data pipeline workflows. Strengthened understanding of real-world engineering practices.
+Worked on backend workflow simulation involving API communication and structured data handling.
+Improved architectural understanding of real-world financial systems.
 </p>
+<p class="metric">Focused on backend integration & scalable design principles.</p>
 </div>
 
 <div class="card">
-<h3>Independent Backend Projects</h3>
+<h3>Independent Backend Development</h3>
 <p>
-Developed multiple backend-focused applications implementing optimized data structures, 
-modular design patterns, and structured error handling to simulate production-grade workflows.
+Developed structured Java-based logic systems implementing optimized data structures and efficient algorithms.
+Focused on reducing computational complexity and improving maintainability.
 </p>
+<p class="metric">Optimized algorithm efficiency and improved code modularity.</p>
 </div>
 
 </div>
@@ -244,30 +215,41 @@ modular design patterns, and structured error handling to simulate production-gr
 <div class="card">
 <h3>Digital Fraud Detection System</h3>
 <p>
-Designed fraud detection logic using efficient Java data structures and algorithmic techniques to 
-handle edge cases and improve processing efficiency.
+Designed fraud detection logic using optimized data structures.
+Implemented validation layers and edge-case handling for reliability.
 </p>
-<a href="https://github.com/Gillmankhan07" target="_blank">View Project →</a>
+<p class="metric">Improved logical processing efficiency through structured algorithm design.</p>
 </div>
 
 <div class="card">
 <h3>Restaurant Web Application</h3>
 <p>
-Built a structured frontend interface with clean layout organization and maintainable code structure.
+Built structured frontend architecture emphasizing maintainable code and component organization.
 </p>
-<a href="https://github.com/Gillmankhan07" target="_blank">View Project →</a>
+<p class="metric">Enhanced UI responsiveness and layout scalability.</p>
 </div>
 
 <div class="card">
-<h3>Security & Backend Practice Labs</h3>
+<h3>Backend Practice Labs</h3>
 <p>
-Implemented backend logic improvements and security-focused testing practices to strengthen understanding 
-of system vulnerabilities and secure coding principles.
+Implemented modular backend logic simulating production-level workflows.
+Focused on clean architecture and structured error management.
 </p>
-<a href="https://github.com/Gillmankhan07" target="_blank">View Project →</a>
+<p class="metric">Strengthened understanding of scalable backend design.</p>
 </div>
 
 </div>
+</section>
+
+<section id="design">
+<h2>System Design Approach</h2>
+<p>
+• Prioritize modular architecture and separation of concerns.  
+• Optimize algorithmic complexity before scaling infrastructure.  
+• Design APIs with clear contracts and validation layers.  
+• Emphasize maintainability and readability over premature optimization.  
+• Plan for horizontal scalability and structured data flow.
+</p>
 </section>
 
 <section id="contact">
@@ -278,7 +260,7 @@ of system vulnerabilities and secure coding principles.
 </section>
 
 <footer>
-© 2026 Gillman Khan — Software Developer Portfolio
+© 2026 Gillman Khan — Software Developer
 </footer>
 
 </body>
