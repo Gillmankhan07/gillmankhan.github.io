@@ -3,281 +3,242 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gillman Khan | Cyber Terminal</title>
+<title>Gillman Khan | Software Engineer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
 body{
-background:black;
-color:#00ff88;
-font-family:'Share Tech Mono', monospace;
-overflow:hidden;
+font-family:'Inter',sans-serif;
+background:#ffffff;
+color:#111827;
+line-height:1.6;
 }
 
-/* MATRIX BACKGROUND */
-#matrix{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-z-index:-2;
-}
-
-/* BOOT SCREEN */
-#boot{
-position:fixed;
-width:100%;
-height:100%;
-background:black;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-font-size:1rem;
-z-index:9999;
-}
-
-.boot-line{
-opacity:0;
-animation:fadeIn 0.6s forwards;
-}
-
-@keyframes fadeIn{
-to{opacity:1;}
-}
-
-/* MAIN CONTENT */
-#main{
-opacity:0;
-transition:1s;
-overflow:auto;
-height:100vh;
-}
-
-/* NAV */
+/* NAVBAR */
 .navbar{
 position:fixed;
 top:0;
 width:100%;
 display:flex;
 justify-content:space-between;
-padding:15px 40px;
-background:rgba(0,0,0,0.8);
-border-bottom:1px solid #00ff88;
+align-items:center;
+padding:20px 80px;
+background:white;
+border-bottom:1px solid #e5e7eb;
 z-index:1000;
 }
 
 .navbar a{
-color:#00ff88;
 text-decoration:none;
-margin-left:20px;
+color:#374151;
+margin-left:30px;
+font-weight:500;
 }
 
 .navbar a:hover{
-text-shadow:0 0 10px #00ff88;
+color:#111827;
 }
 
 /* HERO */
 header{
-height:90vh;
+min-height:90vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
-align-items:center;
-text-align:center;
+align-items:flex-start;
+padding:120px 80px 60px 80px;
+max-width:1100px;
+margin:auto;
 }
 
-.profile{
-width:130px;
-height:130px;
-border-radius:50%;
-border:2px solid #00ff88;
-box-shadow:0 0 20px #00ff88;
+header h1{
+font-size:3.2rem;
+font-weight:700;
 margin-bottom:20px;
 }
 
-.glitch{
-font-family:'Orbitron', sans-serif;
-font-size:2.5rem;
-position:relative;
-animation:flicker 2s infinite;
+.highlight{
+color:#2563eb;
 }
 
-@keyframes flicker{
-0%{opacity:1;}
-50%{opacity:0.8;}
-100%{opacity:1;}
+header p{
+font-size:1.2rem;
+max-width:650px;
+color:#4b5563;
+margin-bottom:30px;
 }
 
 .btn{
-margin:15px;
-padding:8px 20px;
-border:1px solid #00ff88;
-background:transparent;
-color:#00ff88;
+display:inline-block;
+padding:12px 24px;
+border-radius:6px;
 text-decoration:none;
+font-weight:500;
+margin-right:15px;
 }
 
-.btn:hover{
-background:#00ff88;
-color:black;
+.primary{
+background:#2563eb;
+color:white;
+}
+
+.secondary{
+border:1px solid #2563eb;
+color:#2563eb;
 }
 
 /* SECTION */
 section{
-padding:80px 20px;
-max-width:1000px;
+padding:80px 80px;
+max-width:1100px;
 margin:auto;
 }
 
-.card{
-background:rgba(0,0,0,0.7);
-border:1px solid #00ff88;
-padding:20px;
-margin-bottom:20px;
+h2{
+font-size:1.8rem;
+margin-bottom:30px;
 }
 
+/* PROJECT GRID */
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.card{
+border:1px solid #e5e7eb;
+border-radius:10px;
+padding:25px;
+transition:0.2s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+}
+
+.card h3{
+margin-bottom:10px;
+font-size:1.2rem;
+}
+
+.card p{
+color:#4b5563;
+font-size:0.95rem;
+margin-bottom:15px;
+}
+
+.card a{
+text-decoration:none;
+color:#2563eb;
+font-weight:500;
+}
+
+/* FOOTER */
 footer{
+padding:40px 80px;
+border-top:1px solid #e5e7eb;
+color:#6b7280;
+font-size:0.9rem;
 text-align:center;
-padding:20px;
-border-top:1px solid #00ff88;
-font-size:0.8rem;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.navbar{ padding:15px 20px; }
+header{ padding:120px 20px 40px 20px; }
+section{ padding:60px 20px; }
 }
 </style>
 </head>
 
 <body>
 
-<canvas id="matrix"></canvas>
-
-<div id="boot"></div>
-
-<div id="main">
 <nav class="navbar">
-<div>GILLMAN_SEC</div>
+<div><strong>Gillman Khan</strong></div>
 <div>
-<a href="#">HOME</a>
-<a href="#about">ABOUT</a>
-<a href="#projects">PROJECTS</a>
-<a href="#contact">CONTACT</a>
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
 </div>
 </nav>
 
 <header>
-<img src="profile.jpg" class="profile">
-<h1 class="glitch">GILLMAN KHAN</h1>
-<p id="typing"></p>
-<a href="resume.pdf" download class="btn">DOWNLOAD CV</a>
+<h1>
+Building <span class="highlight">scalable backend systems</span> and production-ready software.
+</h1>
+<p>
+Software Engineer specializing in Java, Data Structures & Algorithms, and backend architecture. 
+Focused on designing efficient, secure, and maintainable systems aligned with real-world production standards.
+</p>
+<div>
+<a href="resume.pdf" download class="btn primary">Download Resume</a>
+<a href="#contact" class="btn secondary">Contact</a>
+</div>
 </header>
 
 <section id="about">
-<h2>> ABOUT</h2>
-<div class="card">
-<p>Cybersecurity-focused developer specializing in secure backend systems and vulnerability analysis.</p>
-</div>
+<h2>About</h2>
+<p>
+Computer Science undergraduate (2027) with strong foundations in algorithmic problem solving, 
+system design principles, and backend development. 
+Experienced in building application logic, integrating APIs, and structuring maintainable architectures.
+</p>
 </section>
 
 <section id="projects">
-<h2>> PROJECTS</h2>
+<h2>Selected Projects</h2>
+<div class="projects">
+
 <div class="card">
-<h3>Digital Fraud Detection</h3>
-<p>Java-based fraud detection logic using algorithmic optimization.</p>
+<h3>Digital Fraud Detection System</h3>
+<p>
+Designed fraud detection logic using optimized Java data structures. 
+Focused on efficiency, scalability, and edge-case handling.
+</p>
+<a href="https://github.com/Gillmankhan07" target="_blank">View on GitHub →</a>
 </div>
+
 <div class="card">
-<h3>CTF Security Labs</h3>
-<p>Web exploitation & vulnerability testing practice.</p>
+<h3>Restaurant Web Application</h3>
+<p>
+Built a responsive frontend with structured layout and clean component organization.
+Emphasized usability and maintainable code practices.
+</p>
+<a href="https://github.com/Gillmankhan07" target="_blank">View on GitHub →</a>
+</div>
+
+<div class="card">
+<h3>CTF Security Practice</h3>
+<p>
+Conducted vulnerability analysis and exploitation exercises to strengthen understanding 
+of secure coding and backend security fundamentals.
+</p>
+<a href="https://github.com/Gillmankhan07" target="_blank">View on GitHub →</a>
+</div>
+
 </div>
 </section>
 
 <section id="contact">
-<h2>> CONTACT</h2>
-<div class="card">
+<h2>Contact</h2>
 <p>Email: gillmankhanimmortal@gmail.com</p>
-</div>
+<p>GitHub: github.com/Gillmankhan07</p>
+<p>LinkedIn: linkedin.com/in/gillman-khan-24783829b</p>
 </section>
 
 <footer>
-SYSTEM STATUS: ONLINE | 2026
+© 2026 Gillman Khan — Software Engineering Portfolio
 </footer>
-</div>
-
-<script>
-/* MATRIX */
-const canvas=document.getElementById("matrix");
-const ctx=canvas.getContext("2d");
-canvas.height=window.innerHeight;
-canvas.width=window.innerWidth;
-const letters="01";
-const fontSize=14;
-const columns=canvas.width/fontSize;
-const drops=[];
-for(let x=0;x<columns;x++) drops[x]=1;
-
-function draw(){
-ctx.fillStyle="rgba(0,0,0,0.05)";
-ctx.fillRect(0,0,canvas.width,canvas.height);
-ctx.fillStyle="#00ff88";
-ctx.font=fontSize+"px monospace";
-for(let i=0;i<drops.length;i++){
-const text=letters[Math.floor(Math.random()*letters.length)];
-ctx.fillText(text,i*fontSize,drops[i]*fontSize);
-if(drops[i]*fontSize>canvas.height && Math.random()>0.975) drops[i]=0;
-drops[i]++;
-}
-}
-setInterval(draw,33);
-
-/* BOOT ANIMATION */
-const bootLines=[
-"Initializing Secure System...",
-"Connecting to Encrypted Node...",
-"Bypassing Firewall...",
-"Decrypting Identity...",
-"Access Granted ✔"
-];
-
-const boot=document.getElementById("boot");
-
-let index=0;
-function showBootLine(){
-if(index<bootLines.length){
-let p=document.createElement("p");
-p.textContent=bootLines[index];
-p.classList.add("boot-line");
-p.style.animationDelay=(index*0.5)+"s";
-boot.appendChild(p);
-index++;
-setTimeout(showBootLine,600);
-}else{
-setTimeout(()=>{
-boot.style.display="none";
-document.getElementById("main").style.opacity="1";
-document.body.style.overflow="auto";
-},1500);
-}
-}
-showBootLine();
-
-/* TYPING */
-const text="> Ethical Hacker | Backend Developer | Security Researcher";
-let i=0;
-function typeWriter(){
-if(i<text.length){
-document.getElementById("typing").innerHTML+=text.charAt(i);
-i++;
-setTimeout(typeWriter,40);
-}
-}
-setTimeout(typeWriter,4000);
-</script>
 
 </body>
 </html>
