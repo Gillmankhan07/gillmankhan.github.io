@@ -17,7 +17,7 @@ scroll-behavior:smooth;
 
 body{
 font-family:'Inter',sans-serif;
-background:#ffffff;
+background:#f9fafb;
 color:#111827;
 line-height:1.7;
 }
@@ -41,6 +41,7 @@ text-decoration:none;
 color:#374151;
 margin-left:25px;
 font-weight:500;
+transition:0.2s;
 }
 
 .navbar a:hover{
@@ -49,13 +50,29 @@ color:#2563eb;
 
 /* HERO */
 header{
-min-height:90vh;
+min-height:95vh;
 display:flex;
-flex-direction:column;
-justify-content:center;
+align-items:center;
+justify-content:space-between;
 padding:120px 80px 60px 80px;
-max-width:1100px;
+max-width:1200px;
 margin:auto;
+gap:40px;
+}
+
+.hero-left{
+flex:1;
+}
+
+.hero-right{
+flex:1;
+text-align:right;
+}
+
+.hero-right img{
+width:250px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
 header h1{
@@ -69,7 +86,6 @@ color:#2563eb;
 
 header p{
 font-size:1.1rem;
-max-width:750px;
 color:#4b5563;
 margin-bottom:25px;
 }
@@ -78,7 +94,7 @@ margin-bottom:25px;
 display:flex;
 gap:15px;
 flex-wrap:wrap;
-margin-top:15px;
+margin-top:10px;
 }
 
 .btn{
@@ -101,7 +117,7 @@ background:#1e40af;
 .secondary{
 border:1px solid #2563eb;
 color:#2563eb;
-background:transparent;
+background:white;
 }
 
 .secondary:hover{
@@ -109,36 +125,45 @@ background:#2563eb;
 color:white;
 }
 
-/* SECTIONS */
+/* SECTION */
 section{
-padding:80px 80px;
+padding:90px 80px;
 max-width:1100px;
 margin:auto;
 }
 
 h2{
-margin-bottom:25px;
 font-size:1.8rem;
+margin-bottom:25px;
 }
 
-ul{
-margin-left:20px;
-}
-
-.grid{
+/* TECH STACK */
+.tech-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:15px;
 }
 
-.card{
+.tech-item{
+background:white;
+padding:12px;
+border-radius:8px;
 border:1px solid #e5e7eb;
-border-radius:10px;
+text-align:center;
+font-weight:500;
+}
+
+/* PROJECT CARDS */
+.project{
+background:white;
 padding:25px;
+border-radius:12px;
+border:1px solid #e5e7eb;
+margin-bottom:25px;
 transition:0.2s;
 }
 
-.card:hover{
+.project:hover{
 transform:translateY(-5px);
 box-shadow:0 10px 25px rgba(0,0,0,0.05);
 }
@@ -159,150 +184,100 @@ color:#6b7280;
 }
 
 /* RESPONSIVE */
-@media(max-width:768px){
-.navbar{padding:15px 20px;}
-header{padding:120px 20px 40px 20px;}
-section{padding:60px 20px;}
+@media(max-width:900px){
+header{
+flex-direction:column;
+text-align:center;
+}
+.hero-right{
+text-align:center;
+}
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
 <div class="navbar">
 <strong>Gillman Khan</strong>
 <div>
 <a href="#about">About</a>
-<a href="#problem-solving">Problem Solving</a>
-<a href="#impact">Impact</a>
+<a href="#tech">Tech Stack</a>
 <a href="#projects">Projects</a>
-<a href="#strengths">Strengths</a>
-<a href="#profiles">Coding Profiles</a>
 <a href="#contact">Contact</a>
 </div>
 </div>
 
-<!-- HERO -->
 <header>
+
+<div class="hero-left">
 <h1>
-Software Developer focused on <span class="highlight">scalable backend systems</span>.
+Backend Developer building <span class="highlight">scalable systems</span>.
 </h1>
 
 <p>
-Backend-focused engineer specializing in Java and Data Structures & Algorithms.
-Solved 200+ algorithmic problems with strong medium-level pattern recognition.
-Focused on building modular backend systems emphasizing performance, clean architecture, and scalability.
-Actively preparing for competitive software engineering internships.
+Computer Science undergraduate focused on Java, Data Structures & Algorithms, and backend architecture.
+Solved 200+ problems and continuously improving pattern recognition and system design thinking.
 </p>
 
 <div class="resume-actions">
 <a href="resume.pdf" target="_blank" class="btn primary">View Resume</a>
 <a href="resume.pdf" download class="btn secondary">Download Resume</a>
-<a href="#contact" class="btn secondary">Contact</a>
 </div>
+</div>
+
+<div class="hero-right">
+<img src="profile.jpg" alt="Profile Photo">
+</div>
+
 </header>
 
-<!-- ABOUT -->
 <section id="about">
 <h2>About</h2>
 <p>
-Computer Science undergraduate (2027) with strong foundations in algorithmic problem solving,
-time-complexity optimization, and backend system design. Focused on writing production-ready,
-maintainable code aligned with industry engineering standards.
+I focus on building maintainable backend systems with strong emphasis on time complexity optimization and modular architecture.
+Actively preparing for competitive software engineering internships by strengthening algorithmic depth and system-level thinking.
 </p>
 </section>
 
-<!-- PROBLEM SOLVING -->
-<section id="problem-solving">
-<h2>Problem Solving</h2>
-<p>
-Solved 200+ DSA problems with emphasis on medium-level pattern mastery.
-Strong understanding of arrays, hashing, sliding window, binary search, recursion, graph traversal, and time-complexity optimization.
-Comfortable analyzing time and space trade-offs under interview constraints.
-</p>
+<section id="tech">
+<h2>Tech Stack</h2>
+
+<div class="tech-grid">
+<div class="tech-item">Java</div>
+<div class="tech-item">Data Structures</div>
+<div class="tech-item">Algorithms</div>
+<div class="tech-item">OOP</div>
+<div class="tech-item">SQL</div>
+<div class="tech-item">Git</div>
+<div class="tech-item">REST APIs</div>
+<div class="tech-item">Operating Systems</div>
+</div>
+
 </section>
 
-<!-- IMPACT -->
-<section id="impact">
-<h2>Impact Highlights</h2>
-<ul>
-<li>• Solved 200+ Data Structures & Algorithms problems.</li>
-<li>• Reduced redundant operations in backend logic by ~30% using optimized data structures.</li>
-<li>• Designed modular backend systems following OOP principles.</li>
-<li>• Strengthened system scalability through structured architecture planning.</li>
-</ul>
-</section>
-
-<!-- PROJECTS -->
 <section id="projects">
-<h2>Selected Projects</h2>
+<h2>Projects</h2>
 
-<div class="grid">
-
-<div class="card">
+<div class="project">
 <h3>Digital Fraud Detection System</h3>
 <p>
-Designed and implemented a rule-based fraud detection engine using optimized HashMap and Set structures,
-improving lookup efficiency from O(n²) to O(n).
+Designed rule-based fraud detection logic using optimized HashMap and Set data structures,
+reducing lookup complexity from O(n²) to O(n).
 </p>
-<div class="metric">Focus: Algorithm optimization & scalable logic design</div>
+<div class="metric">Impact: Improved processing efficiency and structured validation flow.</div>
 </div>
 
-<div class="card">
+<div class="project">
 <h3>Restaurant Web Application</h3>
 <p>
-Developed a structured, component-based responsive UI with emphasis on maintainability
-and layout efficiency. Improved interface consistency and rendering performance.
+Built a responsive, maintainable UI structure emphasizing modular layout design and clean architecture.
 </p>
-<div class="metric">Focus: Clean architecture & modular design</div>
+<div class="metric">Impact: Improved scalability and code readability.</div>
 </div>
-
-<div class="card">
-<h3>Backend Practice Systems</h3>
-<p>
-Built modular backend logic simulating production workflows,
-including structured validation layers and error management systems.
-</p>
-<div class="metric">Focus: Production-ready backend design</div>
-</div>
-
-</div>
-</section>
-
-<!-- STRENGTHS -->
-<section id="strengths">
-<h2>Core Engineering Strengths</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Algorithmic Problem Solving</h3>
-<p>Strong command over arrays, linked lists, trees, recursion, dynamic programming basics, and graph traversal.</p>
-</div>
-
-<div class="card">
-<h3>Backend Logic Design</h3>
-<p>Designing modular systems with separation of concerns and optimized data flow.</p>
-</div>
-
-<div class="card">
-<h3>System Design Thinking</h3>
-<p>Understanding trade-offs between performance, memory usage, and scalability constraints.</p>
-</div>
-
-</div>
-</section>
-
-<!-- CODING PROFILES -->
-<section id="profiles">
-<h2>Coding Profiles</h2>
-
-<p>CodeChef: https://codechef.com/users/gillman_khan07</p>
 
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
 <h2>Contact</h2>
 <p>Email: gillmankhanimmortal@gmail.com</p>
